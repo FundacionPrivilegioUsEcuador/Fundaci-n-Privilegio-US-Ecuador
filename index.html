@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <title>Fundación Privilegio US Ecuador | Inicio</title>
     <!-- Google Fonts: Inter, sistema limpio -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 28px;
+            padding: 0 20px;
         }
 
         h1, h2, h3 {
@@ -35,7 +35,7 @@
         }
 
         h2 {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
         }
 
@@ -43,14 +43,17 @@
             font-size: 1rem;
             color: #4a6272;
             max-width: 720px;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
-        /* Header minimal */
+        /* Header minimal - móvil responsive */
         .site-header {
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid #e9eef2;
             background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .header-flex {
@@ -58,26 +61,26 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .logo-img {
-            height: 48px;
+            height: 42px;
             width: auto;
             object-fit: contain;
-            border-radius: 12px;
+            border-radius: 10px;
         }
 
         .logo-text {
             font-weight: 700;
-            font-size: 1.35rem;
-            background: linear-gradient(135deg, #b52b1c, #1f3b6b);
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #c4212e, #283455);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -85,25 +88,26 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.2rem;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
             font-weight: 500;
-            color: #2c4a62;
-            font-size: 0.95rem;
+            color: #283455;
+            font-size: 0.85rem;
             transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: #c0392b;
+            color: #c4212e;
         }
 
-        /* Hero */
+        /* Hero - completamente responsive */
         .hero {
-            padding: 4rem 0 3rem 0;
+            padding: 2.5rem 0 2rem 0;
             background: #fefaf9;
             border-bottom: 1px solid #f0eef2;
         }
@@ -121,45 +125,46 @@
         }
 
         .hero-badge {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            color: #c0392b;
+            color: #c4212e;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 0.75rem;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 2.2rem;
             line-height: 1.2;
             color: #1f3b4c;
             margin-bottom: 1rem;
         }
 
         .hero-content h1 span {
-            color: #b52b1c;
+            color: #c4212e;
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #3f5f70;
-            max-width: 90%;
-            margin-bottom: 2rem;
+            max-width: 100%;
+            margin-bottom: 1.8rem;
         }
 
         .btn-group {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
         }
 
         .btn-primary {
-            background: #c0392b;
+            background: #c4212e;
             color: white;
-            padding: 0.7rem 1.6rem;
+            padding: 0.6rem 1.3rem;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: background 0.2s;
             display: inline-flex;
             align-items: center;
@@ -168,31 +173,31 @@
         }
 
         .btn-primary:hover {
-            background: #a12f22;
+            background: #a01b26;
         }
 
         .btn-outline {
             border: 1px solid #cbdde4;
             background: transparent;
-            color: #2c5a70;
-            padding: 0.7rem 1.6rem;
+            color: #283455;
+            padding: 0.6rem 1.3rem;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: all 0.2s;
         }
 
         .btn-outline:hover {
-            border-color: #2c3e66;
-            color: #2c3e66;
+            border-color: #c4212e;
+            color: #c4212e;
         }
 
-        /* 🔽 CORRECCIÓN: La imagen ahora se adapta perfectamente al recuadro 🔽 */
         .hero-image {
             flex: 0.9;
             width: 100%;
-            min-height: 380px;
-            border-radius: 24px;
+            min-height: 280px;
+            border-radius: 20px;
             overflow: hidden;
             background-color: #f0e2de;
         }
@@ -200,20 +205,20 @@
         .hero-image img {
             width: 100%;
             height: 100%;
-            min-height: 380px;
+            min-height: 280px;
             object-fit: cover;
             object-position: center;
             display: block;
-            border-radius: 24px;
+            border-radius: 20px;
             box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.08);
         }
 
         /* Resolución */
         .resolucion-wrap {
-            margin: 2rem auto 1rem auto;
+            margin: 1.5rem auto 0 auto;
             text-align: center;
             border-top: 1px solid #efe6e3;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
         }
 
         .resolucion-tag {
@@ -221,50 +226,54 @@
             align-items: center;
             gap: 8px;
             background: #fdf0ed;
-            padding: 0.5rem 1.4rem;
+            padding: 0.4rem 1rem;
             border-radius: 60px;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             font-weight: 500;
-            color: #a53223;
+            color: #c4212e;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
         }
 
         /* Misión */
         .mission-section {
-            padding: 3.5rem 0;
+            padding: 2.5rem 0;
         }
 
         .mission-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
             margin-top: 1.5rem;
         }
 
         .mission-item {
-            border-left: 3px solid #c0392b;
-            padding-left: 1.4rem;
+            border-left: 3px solid #c4212e;
+            padding-left: 1.2rem;
         }
 
         .mission-item i {
-            font-size: 1.8rem;
-            color: #2c3e66;
-            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            color: #283455;
+            margin-bottom: 0.8rem;
         }
 
         .mission-item h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: #1f3b4c;
         }
 
         .mission-item p {
             color: #415f6b;
+            font-size: 0.9rem;
         }
 
         /* Donaciones */
         .donation-section {
             background: #fefaf9;
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             border-top: 1px solid #f0e6e3;
             border-bottom: 1px solid #f0e6e3;
         }
@@ -272,7 +281,7 @@
         .donation-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: flex-start;
             justify-content: space-between;
         }
@@ -281,141 +290,155 @@
             flex: 1.2;
         }
 
+        .donation-info h2 {
+            font-size: 1.6rem;
+        }
+
+        .donation-info > p {
+            font-size: 0.9rem;
+        }
+
         .bank-detail {
             background: #ffffff;
             border: 1px solid #e2e8ed;
-            border-radius: 24px;
-            padding: 1.8rem;
-            margin-top: 1.2rem;
+            border-radius: 20px;
+            padding: 1.3rem;
+            margin-top: 1rem;
         }
 
         .bank-detail h3 {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #1f3b6b;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #283455;
+            flex-wrap: wrap;
         }
 
         .account-row {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 0.75rem;
-            margin: 1.2rem 0 1rem 0;
+            gap: 0.5rem;
+            margin: 1rem 0;
             background: #f9f5f3;
-            padding: 0.6rem 0.8rem;
+            padding: 0.5rem 0.6rem;
             border-radius: 60px;
             width: fit-content;
         }
 
         .account-number {
             font-family: monospace;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             background: #f1eae7;
-            padding: 0.2rem 1rem;
+            padding: 0.2rem 0.8rem;
             border-radius: 40px;
             letter-spacing: 1px;
-            color: #b52b1c;
+            color: #c4212e;
         }
 
         .copy-btn {
             background: none;
             border: 1px solid #cbdde4;
-            padding: 0.3rem 1rem;
+            padding: 0.25rem 0.8rem;
             border-radius: 40px;
             cursor: pointer;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
             transition: all 0.2s;
         }
 
         .copy-btn:hover {
-            background: #2c3e66;
-            border-color: #2c3e66;
+            background: #283455;
+            border-color: #283455;
             color: white;
         }
 
         .bank-meta {
-            margin: 1rem 0 0.5rem 0;
+            margin: 0.8rem 0 0.3rem 0;
             color: #2f5c70;
+            font-size: 0.85rem;
+        }
+
+        .bank-meta p {
+            margin-bottom: 0.3rem;
         }
 
         .email-in-bank {
-            margin-top: 1.2rem;
+            margin-top: 1rem;
             padding-top: 0.8rem;
             border-top: 1px dashed #e0cfc9;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
+            font-size: 0.85rem;
         }
 
         .email-in-bank i {
-            color: #c0392b;
-            font-size: 1rem;
+            color: #c4212e;
+            font-size: 0.9rem;
         }
 
         .email-in-bank a {
-            color: #2c3e66;
+            color: #283455;
             font-weight: 500;
             text-decoration: none;
             border-bottom: 1px solid #dcc9c2;
         }
 
         .email-in-bank a:hover {
-            color: #c0392b;
-            border-bottom-color: #c0392b;
+            color: #c4212e;
+            border-bottom-color: #c4212e;
         }
 
-        /* Galería con botones de años */
+        /* Galería */
         .gallery-section {
-            padding: 3rem 0;
+            padding: 2.5rem 0;
         }
 
         .year-buttons {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 0.8rem;
+            margin-bottom: 1.8rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .year-btn {
             background: transparent;
-            border: 2px solid #c0392b;
-            color: #c0392b;
-            padding: 0.5rem 1.8rem;
+            border: 2px solid #c4212e;
+            color: #c4212e;
+            padding: 0.4rem 1.3rem;
             border-radius: 40px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .year-btn.active {
-            background: #c0392b;
+            background: #c4212e;
             color: white;
         }
 
         .year-btn:hover {
-            background: #c0392b;
+            background: #c4212e;
             color: white;
         }
 
         .gallery-grid {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
             margin-top: 1rem;
         }
 
         .gallery-grid img {
-            width: calc(25% - 1rem);
-            min-width: 160px;
-            border-radius: 20px;
+            width: 100%;
+            border-radius: 16px;
             object-fit: cover;
             aspect-ratio: 1 / 1;
             box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 0.05);
@@ -425,70 +448,166 @@
 
         .gallery-grid img:hover {
             transform: scale(1.02);
-            border-color: #c0392b;
+            border-color: #c4212e;
         }
 
-        /* Contacto final */
+        /* Contacto */
         .contact-info-simple {
             background: #ffffff;
-            padding: 3rem 0 2rem;
+            padding: 2.5rem 0 2rem;
             border-top: 1px solid #efe8e5;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item-simple {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .contact-item-simple i {
             width: 32px;
-            color: #c0392b;
-            font-size: 1.3rem;
-            margin-right: 12px;
+            color: #c4212e;
+            font-size: 1.2rem;
         }
 
         .contact-item-simple a,
         .contact-item-simple span {
             color: #2c5a6e;
             text-decoration: none;
+            font-size: 0.85rem;
         }
 
         footer {
             background: #f7f3f1;
-            padding: 1.8rem 0;
-            font-size: 0.8rem;
+            padding: 1.5rem 0;
+            font-size: 0.75rem;
             color: #486b78;
             text-align: center;
             border-top: 1px solid #e9e0dc;
         }
 
-        @media (max-width: 800px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
+        footer p {
+            margin-bottom: 0.3rem;
+        }
 
-            .hero-image {
-                min-height: 280px;
-            }
-
-            .hero-image img {
-                min-height: 280px;
-            }
-
-            .gallery-grid img {
-                width: calc(50% - 1rem);
+        /* Media Queries para móviles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
             }
 
             .header-flex {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                text-align: center;
+            }
+
+            .logo-area {
+                justify-content: center;
             }
 
             .nav-links {
-                flex-wrap: wrap;
+                justify-content: center;
                 gap: 1rem;
+            }
+
+            .hero {
+                padding: 1.8rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .btn-primary, .btn-outline {
+                padding: 0.5rem 1.1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-image {
+                min-height: 220px;
+            }
+
+            .hero-image img {
+                min-height: 220px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-subhead {
+                font-size: 0.9rem;
+            }
+
+            .mission-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .mission-item p {
+                font-size: 0.85rem;
+            }
+
+            .bank-detail {
+                padding: 1rem;
+            }
+
+            .account-number {
+                font-size: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-item-simple {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-image {
+                min-height: 180px;
+            }
+
+            .hero-image img {
+                min-height: 180px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .year-btn {
+                padding: 0.3rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .resolucion-tag {
+                font-size: 0.6rem;
+                padding: 0.3rem 0.8rem;
             }
         }
 
@@ -497,13 +616,23 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: #2c3e66;
+            background: #283455;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 60px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             z-index: 1000;
             backdrop-filter: blur(6px);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 480px) {
+            .toast-msg {
+                white-space: normal;
+                text-align: center;
+                max-width: 90%;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -537,7 +666,6 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <!-- 🔽 Aquí va tu imagen - ahora se adaptará automáticamente al recuadro 🔽 -->
                     <img src="fotoslider1.jpg" alt="Fundación trabajando en comunidad">
                 </div>
             </div>
@@ -585,34 +713,29 @@
                             <p><strong>Beneficiario:</strong> Fundación Privilegio US Ecuador</p>
                             <p><strong>Tipo de cuenta:</strong> Corriente / Código Swift: PACIECEG</p>
                         </div>
-                        <p style="font-size: 0.85rem; margin: 0.8rem 0 0.5rem 0;"><i class="fas fa-check-circle" style="color:#c0392b;"></i> Donaciones deducibles de impuestos, emitimos certificados oficiales.</p>
+                        <p style="font-size: 0.8rem; margin: 0.6rem 0 0.3rem 0;"><i class="fas fa-check-circle" style="color:#c4212e;"></i> Donaciones deducibles de impuestos, emitimos certificados oficiales.</p>
 
                         <div class="email-in-bank">
                             <i class="fas fa-envelope"></i>
                             <span>Para donaciones empresariales o en especie: </span>
                             <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
-                            <button class="copy-btn" style="margin-left: 0.2rem;" onclick="copiarAlPortapapeles('info@privilegiousecuador.org', 'Correo electrónico')"><i class="far fa-copy"></i> Copiar correo</button>
+                            <button class="copy-btn" style="margin-left: 0.2rem;" onclick="copiarAlPortapapeles('info@privilegiousecuador.org', 'Correo electrónico')"><i class="far fa-copy"></i> Copiar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN GALERÍA CON BOTONES 2024 Y 2025 -->
         <section class="gallery-section container">
             <h2>Nuestro trabajo en imágenes</h2>
             <div class="section-subhead">Voluntariado activo, brigadas médicas y entrega de kits escolares.</div>
 
-            <!-- Botones para cambiar entre años -->
             <div class="year-buttons">
                 <button class="year-btn active" data-year="2024">2024</button>
                 <button class="year-btn" data-year="2025">2025</button>
             </div>
 
-            <!-- Contenedor de la galería -->
-            <div class="gallery-grid" id="galeriaContainer">
-                <!-- Las imágenes se cargarán dinámicamente con JavaScript -->
-            </div>
+            <div class="gallery-grid" id="galeriaContainer"></div>
         </section>
 
         <section id="contacto" class="contact-info-simple">
@@ -635,7 +758,7 @@
                         <span>+593 98 765 4321</span>
                     </div>
                 </div>
-                <div style="border-top: 1px solid #efe2dd; margin-top: 1rem; padding-top: 1.5rem; text-align: center; font-size:0.85rem;">
+                <div style="border-top: 1px solid #efe2dd; margin-top: 1rem; padding-top: 1rem; text-align: center; font-size:0.75rem;">
                     <i class="fas fa-file-contract"></i> Personería Jurídica: Resolución MIES-CZ-8-DDGM-2025-0063-R · Cuenta corriente Banco Pacífico #8743754
                 </div>
             </div>
@@ -644,19 +767,19 @@
 
     <footer>
         <div class="container">
-            <p>Fundación Privilegio US Ecuador — Compromiso, ética y transparencia. <strong>Cuenta donaciones: 8743754 (Banco Pacífico)</strong></p>
-            <p style="margin-top: 0.6rem;">&copy; 2025 · info@privilegiousecuador.org</p>
+            <p>Fundación Privilegio US Ecuador — Compromiso, ética y transparencia.</p>
+            <p><strong>Cuenta donaciones: 8743754 (Banco Pacífico)</strong></p>
+            <p style="margin-top: 0.5rem;">&copy; 2025 · info@privilegiousecuador.org</p>
         </div>
     </footer>
 
     <script>
-        // 🔽 AQUÍ DEFINES LAS IMÁGENES PARA CADA AÑO 🔽
         const imagenesPorAno = {
             '2024': [
                 '2024 (1).jpeg',
                 '2024 (2).jpeg',
                 '2024 (3).jpeg',
-                'https://placehold.co/400x400/D9BDB4/c0392b?text=2024+-+Comunidad'
+                'https://placehold.co/400x400/D9BDB4/c4212e?text=2024+-+Comunidad'
             ],
             '2025': [
                 '2025 (1).jpeg',
@@ -666,45 +789,36 @@
             ]
         };
 
-        let añoActual = '2024';
-
         function cargarGaleria(año) {
             const container = document.getElementById('galeriaContainer');
             const imagenes = imagenesPorAno[año];
-
             if (!imagenes) return;
-
             container.innerHTML = '';
             imagenes.forEach(imgSrc => {
                 const img = document.createElement('img');
                 img.src = imgSrc;
                 img.alt = `Fundación trabajo año ${año}`;
+                img.loading = 'lazy';
                 container.appendChild(img);
             });
         }
 
-        // Event listeners para los botones
         document.querySelectorAll('.year-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 const año = this.getAttribute('data-year');
-                añoActual = año;
                 cargarGaleria(año);
             });
         });
 
-        // Cargar galería inicial (2024)
         cargarGaleria('2024');
 
-        // Funciones de copiado
         function copiarAlPortapapeles(texto, tipoMensaje) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(texto).then(() => {
                     mostrarNotificacion(`${tipoMensaje} copiado: ${texto}`);
-                }).catch(() => {
-                    fallbackCopy(texto);
-                });
+                }).catch(() => fallbackCopy(texto));
             } else {
                 fallbackCopy(texto);
             }
@@ -727,11 +841,10 @@
             document.body.appendChild(toast);
             setTimeout(() => {
                 toast.style.opacity = '0';
-                setTimeout(() => toast.remove(), 500);
+                setTimeout(() => toast.remove(), 400);
             }, 2000);
         }
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
