@@ -67,7 +67,6 @@
             gap: 12px;
         }
 
-        /* Logo imagen en lugar de la P */
         .logo-img {
             height: 48px;
             width: auto;
@@ -90,17 +89,17 @@
             list-style: none;
         }
 
-            .nav-links a {
-                text-decoration: none;
-                font-weight: 500;
-                color: #2c4a62;
-                font-size: 0.95rem;
-                transition: color 0.2s;
-            }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c4a62;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
 
-                .nav-links a:hover {
-                    color: #c0392b;
-                }
+        .nav-links a:hover {
+            color: #c0392b;
+        }
 
         /* Hero */
         .hero {
@@ -137,9 +136,9 @@
             margin-bottom: 1rem;
         }
 
-            .hero-content h1 span {
-                color: #b52b1c;
-            }
+        .hero-content h1 span {
+            color: #b52b1c;
+        }
 
         .hero-content p {
             font-size: 1.1rem;
@@ -168,9 +167,9 @@
             border: none;
         }
 
-            .btn-primary:hover {
-                background: #a12f22;
-            }
+        .btn-primary:hover {
+            background: #a12f22;
+        }
 
         .btn-outline {
             border: 1px solid #cbdde4;
@@ -183,15 +182,29 @@
             transition: all 0.2s;
         }
 
-            .btn-outline:hover {
-                border-color: #2c3e66;
-                color: #2c3e66;
-            }
+        .btn-outline:hover {
+            border-color: #2c3e66;
+            color: #2c3e66;
+        }
+
+        /* 🔽 CORRECCIÓN: La imagen ahora se adapta perfectamente al recuadro 🔽 */
+        .hero-image {
+            flex: 0.9;
+            width: 100%;
+            min-height: 380px;
+            border-radius: 24px;
+            overflow: hidden;
+            background-color: #f0e2de;
+        }
 
         .hero-image img {
             width: 100%;
-            border-radius: 24px;
+            height: 100%;
+            min-height: 380px;
             object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 24px;
             box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.08);
         }
 
@@ -232,21 +245,21 @@
             padding-left: 1.4rem;
         }
 
-            .mission-item i {
-                font-size: 1.8rem;
-                color: #2c3e66;
-                margin-bottom: 1rem;
-            }
+        .mission-item i {
+            font-size: 1.8rem;
+            color: #2c3e66;
+            margin-bottom: 1rem;
+        }
 
-            .mission-item h3 {
-                font-size: 1.4rem;
-                margin-bottom: 0.5rem;
-                color: #1f3b4c;
-            }
+        .mission-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #1f3b4c;
+        }
 
-            .mission-item p {
-                color: #415f6b;
-            }
+        .mission-item p {
+            color: #415f6b;
+        }
 
         /* Donaciones */
         .donation-section {
@@ -276,14 +289,14 @@
             margin-top: 1.2rem;
         }
 
-            .bank-detail h3 {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-                color: #1f3b6b;
-            }
+        .bank-detail h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1f3b6b;
+        }
 
         .account-row {
             display: flex;
@@ -319,11 +332,11 @@
             transition: all 0.2s;
         }
 
-            .copy-btn:hover {
-                background: #2c3e66;
-                border-color: #2c3e66;
-                color: white;
-            }
+        .copy-btn:hover {
+            background: #2c3e66;
+            border-color: #2c3e66;
+            color: white;
+        }
 
         .bank-meta {
             margin: 1rem 0 0.5rem 0;
@@ -340,26 +353,55 @@
             flex-wrap: wrap;
         }
 
-            .email-in-bank i {
-                color: #c0392b;
-                font-size: 1rem;
-            }
+        .email-in-bank i {
+            color: #c0392b;
+            font-size: 1rem;
+        }
 
-            .email-in-bank a {
-                color: #2c3e66;
-                font-weight: 500;
-                text-decoration: none;
-                border-bottom: 1px solid #dcc9c2;
-            }
+        .email-in-bank a {
+            color: #2c3e66;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #dcc9c2;
+        }
 
-                .email-in-bank a:hover {
-                    color: #c0392b;
-                    border-bottom-color: #c0392b;
-                }
+        .email-in-bank a:hover {
+            color: #c0392b;
+            border-bottom-color: #c0392b;
+        }
 
-        /* Galería */
+        /* Galería con botones de años */
         .gallery-section {
             padding: 3rem 0;
+        }
+
+        .year-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .year-btn {
+            background: transparent;
+            border: 2px solid #c0392b;
+            color: #c0392b;
+            padding: 0.5rem 1.8rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .year-btn.active {
+            background: #c0392b;
+            color: white;
+        }
+
+        .year-btn:hover {
+            background: #c0392b;
+            color: white;
         }
 
         .gallery-grid {
@@ -367,24 +409,24 @@
             gap: 1.2rem;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-top: 1.8rem;
+            margin-top: 1rem;
         }
 
-            .gallery-grid img {
-                width: calc(25% - 1rem);
-                min-width: 160px;
-                border-radius: 20px;
-                object-fit: cover;
-                aspect-ratio: 1 / 1;
-                box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 0.05);
-                transition: 0.2s ease;
-                border: 1px solid #f0e2de;
-            }
+        .gallery-grid img {
+            width: calc(25% - 1rem);
+            min-width: 160px;
+            border-radius: 20px;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+            box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 0.05);
+            transition: 0.2s ease;
+            border: 1px solid #f0e2de;
+        }
 
-                .gallery-grid img:hover {
-                    transform: scale(1.02);
-                    border-color: #c0392b;
-                }
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+            border-color: #c0392b;
+        }
 
         /* Contacto final */
         .contact-info-simple {
@@ -407,7 +449,8 @@
             margin-right: 12px;
         }
 
-        .contact-item-simple a, .contact-item-simple span {
+        .contact-item-simple a,
+        .contact-item-simple span {
             color: #2c5a6e;
             text-decoration: none;
         }
@@ -424,6 +467,14 @@
         @media (max-width: 800px) {
             .hero-content h1 {
                 font-size: 2.2rem;
+            }
+
+            .hero-image {
+                min-height: 280px;
+            }
+
+            .hero-image img {
+                min-height: 280px;
             }
 
             .gallery-grid img {
@@ -461,7 +512,6 @@
     <header class="site-header">
         <div class="container header-flex">
             <div class="logo-area">
-                <!-- Logo como imagen - Reemplaza 'tu-logo-aqui.png' con la ruta de tu imagen real -->
                 <img src="logo.png" alt="Fundación Privilegio US Ecuador Logo" class="logo-img">
                 <span class="logo-text">Privilegio US Ecuador</span>
             </div>
@@ -487,7 +537,8 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://placehold.co/800x600/F4E8E4/c0392b?text=Fundación+Privilegio+Ecuador" alt="Voluntarios ayudando">
+                    <!-- 🔽 Aquí va tu imagen - ahora se adaptará automáticamente al recuadro 🔽 -->
+                    <img src="fotoslider1.jpg" alt="Fundación trabajando en comunidad">
                 </div>
             </div>
             <div class="container resolucion-wrap">
@@ -547,14 +598,20 @@
             </div>
         </section>
 
+        <!-- SECCIÓN GALERÍA CON BOTONES 2024 Y 2025 -->
         <section class="gallery-section container">
             <h2>Nuestro trabajo en imágenes</h2>
             <div class="section-subhead">Voluntariado activo, brigadas médicas y entrega de kits escolares.</div>
-            <div class="gallery-grid">
-                <img src="https://placehold.co/400x400/F3E0DB/c0392b?text=Voluntariado" alt="voluntarios">
-                <img src="https://placehold.co/400x400/EBD5CF/c0392b?text=Entrega+de+ayuda" alt="ayuda humanitaria">
-                <img src="https://placehold.co/400x400/E2C9C1/c0392b?text=Talleres" alt="talleres educativos">
-                <img src="https://placehold.co/400x400/D9BDB4/c0392b?text=Comunidad" alt="trabajo comunitario">
+
+            <!-- Botones para cambiar entre años -->
+            <div class="year-buttons">
+                <button class="year-btn active" data-year="2024">2024</button>
+                <button class="year-btn" data-year="2025">2025</button>
+            </div>
+
+            <!-- Contenedor de la galería -->
+            <div class="gallery-grid" id="galeriaContainer">
+                <!-- Las imágenes se cargarán dinámicamente con JavaScript -->
             </div>
         </section>
 
@@ -593,6 +650,54 @@
     </footer>
 
     <script>
+        // 🔽 AQUÍ DEFINES LAS IMÁGENES PARA CADA AÑO 🔽
+        const imagenesPorAno = {
+            '2024': [
+                '2024 (1).jpeg',
+                '2024 (2).jpeg',
+                '2024 (3).jpeg',
+                'https://placehold.co/400x400/D9BDB4/c0392b?text=2024+-+Comunidad'
+            ],
+            '2025': [
+                '2025 (1).jpeg',
+                '2025 (2).jpeg',
+                '2025 (3).jpeg',
+                '2025 (4).jpg'
+            ]
+        };
+
+        let añoActual = '2024';
+
+        function cargarGaleria(año) {
+            const container = document.getElementById('galeriaContainer');
+            const imagenes = imagenesPorAno[año];
+
+            if (!imagenes) return;
+
+            container.innerHTML = '';
+            imagenes.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = `Fundación trabajo año ${año}`;
+                container.appendChild(img);
+            });
+        }
+
+        // Event listeners para los botones
+        document.querySelectorAll('.year-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const año = this.getAttribute('data-year');
+                añoActual = año;
+                cargarGaleria(año);
+            });
+        });
+
+        // Cargar galería inicial (2024)
+        cargarGaleria('2024');
+
+        // Funciones de copiado
         function copiarAlPortapapeles(texto, tipoMensaje) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(texto).then(() => {
@@ -626,6 +731,7 @@
             }, 2000);
         }
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
