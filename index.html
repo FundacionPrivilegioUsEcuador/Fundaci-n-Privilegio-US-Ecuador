@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Fundación Privilegio US Ecuador | Inicio</title>
+    <!-- Google Fonts: Inter, sistema limpio -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a2c38;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subhead {
+            font-size: 1rem;
+            color: #4a6272;
+            max-width: 720px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Header minimal */
+        .site-header {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e9eef2;
+            background: white;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Logo imagen en lugar de la P */
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.35rem;
+            background: linear-gradient(135deg, #b52b1c, #1f3b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+            .nav-links a {
+                text-decoration: none;
+                font-weight: 500;
+                color: #2c4a62;
+                font-size: 0.95rem;
+                transition: color 0.2s;
+            }
+
+                .nav-links a:hover {
+                    color: #c0392b;
+                }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 0 3rem 0;
+            background: #fefaf9;
+            border-bottom: 1px solid #f0eef2;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #c0392b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: #1f3b4c;
+            margin-bottom: 1rem;
+        }
+
+            .hero-content h1 span {
+                color: #b52b1c;
+            }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #3f5f70;
+            max-width: 90%;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #c0392b;
+            color: white;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background: #a12f22;
+            }
+
+        .btn-outline {
+            border: 1px solid #cbdde4;
+            background: transparent;
+            color: #2c5a70;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+            .btn-outline:hover {
+                border-color: #2c3e66;
+                color: #2c3e66;
+            }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Resolución */
+        .resolucion-wrap {
+            margin: 2rem auto 1rem auto;
+            text-align: center;
+            border-top: 1px solid #efe6e3;
+            padding-top: 2rem;
+        }
+
+        .resolucion-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fdf0ed;
+            padding: 0.5rem 1.4rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #a53223;
+        }
+
+        /* Misión */
+        .mission-section {
+            padding: 3.5rem 0;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .mission-item {
+            border-left: 3px solid #c0392b;
+            padding-left: 1.4rem;
+        }
+
+            .mission-item i {
+                font-size: 1.8rem;
+                color: #2c3e66;
+                margin-bottom: 1rem;
+            }
+
+            .mission-item h3 {
+                font-size: 1.4rem;
+                margin-bottom: 0.5rem;
+                color: #1f3b4c;
+            }
+
+            .mission-item p {
+                color: #415f6b;
+            }
+
+        /* Donaciones */
+        .donation-section {
+            background: #fefaf9;
+            padding: 3rem 0;
+            border-top: 1px solid #f0e6e3;
+            border-bottom: 1px solid #f0e6e3;
+        }
+
+        .donation-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .donation-info {
+            flex: 1.2;
+        }
+
+        .bank-detail {
+            background: #ffffff;
+            border: 1px solid #e2e8ed;
+            border-radius: 24px;
+            padding: 1.8rem;
+            margin-top: 1.2rem;
+        }
+
+            .bank-detail h3 {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                color: #1f3b6b;
+            }
+
+        .account-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.2rem 0 1rem 0;
+            background: #f9f5f3;
+            padding: 0.6rem 0.8rem;
+            border-radius: 60px;
+            width: fit-content;
+        }
+
+        .account-number {
+            font-family: monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: #f1eae7;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 1px;
+            color: #b52b1c;
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid #cbdde4;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+            .copy-btn:hover {
+                background: #2c3e66;
+                border-color: #2c3e66;
+                color: white;
+            }
+
+        .bank-meta {
+            margin: 1rem 0 0.5rem 0;
+            color: #2f5c70;
+        }
+
+        .email-in-bank {
+            margin-top: 1.2rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed #e0cfc9;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+            .email-in-bank i {
+                color: #c0392b;
+                font-size: 1rem;
+            }
+
+            .email-in-bank a {
+                color: #2c3e66;
+                font-weight: 500;
+                text-decoration: none;
+                border-bottom: 1px solid #dcc9c2;
+            }
+
+                .email-in-bank a:hover {
+                    color: #c0392b;
+                    border-bottom-color: #c0392b;
+                }
+
+        /* Galería */
+        .gallery-section {
+            padding: 3rem 0;
+        }
+
+        .gallery-grid {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 1.8rem;
+        }
+
+            .gallery-grid img {
+                width: calc(25% - 1rem);
+                min-width: 160px;
+                border-radius: 20px;
+                object-fit: cover;
+                aspect-ratio: 1 / 1;
+                box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 0.05);
+                transition: 0.2s ease;
+                border: 1px solid #f0e2de;
+            }
+
+                .gallery-grid img:hover {
+                    transform: scale(1.02);
+                    border-color: #c0392b;
+                }
+
+        /* Contacto final */
+        .contact-info-simple {
+            background: #ffffff;
+            padding: 3rem 0 2rem;
+            border-top: 1px solid #efe8e5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item-simple i {
+            width: 32px;
+            color: #c0392b;
+            font-size: 1.3rem;
+            margin-right: 12px;
+        }
+
+        .contact-item-simple a, .contact-item-simple span {
+            color: #2c5a6e;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #f7f3f1;
+            padding: 1.8rem 0;
+            font-size: 0.8rem;
+            color: #486b78;
+            text-align: center;
+            border-top: 1px solid #e9e0dc;
+        }
+
+        @media (max-width: 800px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .gallery-grid img {
+                width: calc(50% - 1rem);
+            }
+
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c3e66;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            z-index: 1000;
+            backdrop-filter: blur(6px);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <!-- Logo como imagen - Reemplaza 'tu-logo-aqui.png' con la ruta de tu imagen real -->
+                <img src="logo.png" alt="Fundación Privilegio US Ecuador Logo" class="logo-img">
+                <span class="logo-text">Privilegio US Ecuador</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#donaciones">Donaciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">Personería Jurídica · Transparencia</div>
+                    <h1>Compromiso, <span>transparencia</span><br>y acción social</h1>
+                    <p>Trabajamos por el desarrollo de comunidades en Ecuador con programas sostenibles. Únete con tu donación o voluntariado.</p>
+                    <div class="btn-group">
+                        <a href="#donaciones" class="btn-primary"><i class="fas fa-hand-holding-heart"></i> Donar ahora</a>
+                        <a href="#nosotros" class="btn-outline">Conocer más</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://placehold.co/800x600/F4E8E4/c0392b?text=Fundación+Privilegio+Ecuador" alt="Voluntarios ayudando">
+                </div>
+            </div>
+            <div class="container resolucion-wrap">
+                <div class="resolucion-tag">
+                    <i class="fas fa-file-alt"></i> Resolución Nro. MIES-CZ-8-DDGM-2025-0063-R · Guayaquil, 25 de abril de 2025
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="mission-section container">
+            <h2>Nuestra esencia</h2>
+            <div class="section-subhead">Actuamos con honestidad y vocación para generar cambios reales en las poblaciones más vulnerables del Ecuador.</div>
+            <div class="mission-grid">
+                <div class="mission-item">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Misión</h3>
+                    <p>Desarrollar proyectos de educación, salud y emprendimiento, con total transparencia en el uso de recursos.</p>
+                </div>
+                <div class="mission-item">
+                    <i class="fas fa-eye"></i>
+                    <h3>Visión</h3>
+                    <p>Ser un referente de fundación innovadora y ética, reconocida por su impacto social medible.</p>
+                </div>
+                <div class="mission-item">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Valores</h3>
+                    <p>Honestidad, equidad, calidez humana y compromiso absoluto con la rendición de cuentas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="donaciones" class="donation-section">
+            <div class="container donation-flex">
+                <div class="donation-info">
+                    <h2>Apoya nuestra causa</h2>
+                    <p>Cada donación fortalece programas de alimentación, capacitación laboral y atención a grupos vulnerables. Trabajamos con cuentas claras.</p>
+                    <div class="bank-detail">
+                        <h3><i class="fas fa-university"></i> Cuenta Corriente · Banco Pacífico</h3>
+                        <div class="account-row">
+                            <span class="account-number" id="cuentaText">8743754</span>
+                            <button class="copy-btn" onclick="copiarAlPortapapeles('8743754', 'Número de cuenta')"><i class="far fa-copy"></i> Copiar</button>
+                        </div>
+                        <div class="bank-meta">
+                            <p><strong>Beneficiario:</strong> Fundación Privilegio US Ecuador</p>
+                            <p><strong>Tipo de cuenta:</strong> Corriente / Código Swift: PACIECEG</p>
+                        </div>
+                        <p style="font-size: 0.85rem; margin: 0.8rem 0 0.5rem 0;"><i class="fas fa-check-circle" style="color:#c0392b;"></i> Donaciones deducibles de impuestos, emitimos certificados oficiales.</p>
+
+                        <div class="email-in-bank">
+                            <i class="fas fa-envelope"></i>
+                            <span>Para donaciones empresariales o en especie: </span>
+                            <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
+                            <button class="copy-btn" style="margin-left: 0.2rem;" onclick="copiarAlPortapapeles('info@privilegiousecuador.org', 'Correo electrónico')"><i class="far fa-copy"></i> Copiar correo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section container">
+            <h2>Nuestro trabajo en imágenes</h2>
+            <div class="section-subhead">Voluntariado activo, brigadas médicas y entrega de kits escolares.</div>
+            <div class="gallery-grid">
+                <img src="https://placehold.co/400x400/F3E0DB/c0392b?text=Voluntariado" alt="voluntarios">
+                <img src="https://placehold.co/400x400/EBD5CF/c0392b?text=Entrega+de+ayuda" alt="ayuda humanitaria">
+                <img src="https://placehold.co/400x400/E2C9C1/c0392b?text=Talleres" alt="talleres educativos">
+                <img src="https://placehold.co/400x400/D9BDB4/c0392b?text=Comunidad" alt="trabajo comunitario">
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-info-simple">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-item-simple">
+                        <i class="fas fa-map-pin"></i>
+                        <span>Guayaquil, Ecuador<br>Av. Francisco de Orellana y Plaza Lagos, Of. 504</span>
+                    </div>
+                    <div class="contact-item-simple">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
+                    </div>
+                    <div class="contact-item-simple">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+593 4 256 7890</span>
+                    </div>
+                    <div class="contact-item-simple">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+593 98 765 4321</span>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid #efe2dd; margin-top: 1rem; padding-top: 1.5rem; text-align: center; font-size:0.85rem;">
+                    <i class="fas fa-file-contract"></i> Personería Jurídica: Resolución MIES-CZ-8-DDGM-2025-0063-R · Cuenta corriente Banco Pacífico #8743754
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Fundación Privilegio US Ecuador — Compromiso, ética y transparencia. <strong>Cuenta donaciones: 8743754 (Banco Pacífico)</strong></p>
+            <p style="margin-top: 0.6rem;">&copy; 2025 · info@privilegiousecuador.org</p>
+        </div>
+    </footer>
+
+    <script>
+        function copiarAlPortapapeles(texto, tipoMensaje) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(texto).then(() => {
+                    mostrarNotificacion(`${tipoMensaje} copiado: ${texto}`);
+                }).catch(() => {
+                    fallbackCopy(texto);
+                });
+            } else {
+                fallbackCopy(texto);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            mostrarNotificacion('Copiado al portapapeles ✓');
+        }
+
+        function mostrarNotificacion(msg) {
+            let toast = document.createElement('div');
+            toast.className = 'toast-msg';
+            toast.innerText = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 500);
+            }, 2000);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#" || targetId === "") return;
+                const targetElem = document.querySelector(targetId);
+                if (targetElem) {
+                    e.preventDefault();
+                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
