@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <title>Fundación Privilegio US Ecuador | Inicio</title>
+    <link rel="icon" type="image/png" href="logo2.png">
     <!-- Google Fonts: Inter, sistema limpio -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 (iconos) -->
@@ -193,24 +194,171 @@
                 color: #c4212e;
             }
 
+        /* Slider / Carrusel - FORMA CUADRADA */
         .hero-image {
             flex: 0.9;
             width: 100%;
-            min-height: 280px;
+            aspect-ratio: 1 / 1;
             border-radius: 20px;
             overflow: hidden;
             background-color: #f0e2de;
+            position: relative;
         }
 
-            .hero-image img {
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-images {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+            .slide.active {
+                opacity: 1;
+                z-index: 1;
+            }
+
+            .slide img {
                 width: 100%;
                 height: 100%;
-                min-height: 280px;
                 object-fit: cover;
                 object-position: center;
                 display: block;
                 border-radius: 20px;
                 box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.08);
+            }
+
+        /* Botones del slider */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(40, 52, 85, 0.7);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+            .slider-btn:hover {
+                background: #c4212e;
+            }
+
+            .slider-btn.prev {
+                left: 12px;
+            }
+
+            .slider-btn.next {
+                right: 12px;
+            }
+
+        /* Indicadores / dots */
+        .slider-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+            .dot.active {
+                background: #c4212e;
+                width: 24px;
+                border-radius: 10px;
+            }
+
+            .dot:hover {
+                background: #c4212e;
+            }
+
+        /* ========== LIGHTBOX / POPUP ========== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+            .lightbox.active {
+                display: flex;
+            }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            cursor: default;
+        }
+
+            .lightbox-content img {
+                width: auto;
+                max-width: 100%;
+                max-height: 90vh;
+                object-fit: contain;
+                border-radius: 12px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 1001;
+        }
+
+            .lightbox-close:hover {
+                color: #c4212e;
+                transform: scale(1.1);
             }
 
         /* Resolución */
@@ -444,6 +592,7 @@
                 box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 0.05);
                 transition: 0.2s ease;
                 border: 1px solid #f0e2de;
+                cursor: pointer;
             }
 
                 .gallery-grid img:hover {
@@ -537,12 +686,8 @@
             }
 
             .hero-image {
-                min-height: 220px;
+                aspect-ratio: 1 / 1;
             }
-
-                .hero-image img {
-                    min-height: 220px;
-                }
 
             h2 {
                 font-size: 1.5rem;
@@ -581,20 +726,18 @@
             .contact-item-simple {
                 justify-content: flex-start;
             }
+
+            .slider-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
         }
 
         @media (max-width: 480px) {
             .hero-content h1 {
                 font-size: 1.5rem;
             }
-
-            .hero-image {
-                min-height: 180px;
-            }
-
-                .hero-image img {
-                    min-height: 180px;
-                }
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -645,10 +788,10 @@
                 <span class="logo-text">Fundación Privilegio US Ecuador</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="#donaciones">Donaciones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
     </header>
@@ -657,16 +800,33 @@
         <section id="inicio" class="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <div class="hero-badge">Personería Jurídica · Transparencia</div>
+                    <div class="hero-badge">Fundación Privilegio US Ecuador</div>
                     <h1>Compromiso, <span>transparencia</span><br>y acción social</h1>
                     <p>Trabajamos por el desarrollo de comunidades en Ecuador con programas sostenibles. Únete con tu donación o voluntariado.</p>
                     <div class="btn-group">
                         <a href="#donaciones" class="btn-primary"><i class="fas fa-hand-holding-heart"></i> Donar ahora</a>
-                        <a href="#nosotros" class="btn-outline">Conocer más</a>
+                        <a href="nosotros.html" class="btn-outline">Conocer más</a>
                     </div>
                 </div>
+
+                <!-- SLIDER DE IMÁGENES - FORMA CUADRADA -->
                 <div class="hero-image">
-                    <img src="fotoslider1.jpg" alt="Fundación trabajando en comunidad">
+                    <div class="slider-container">
+                        <div class="slider-images" id="sliderImages">
+                            <div class="slide active">
+                                <img src="fotoslider1.jpg" alt="Fundación trabajando en comunidad 1">
+                            </div>
+                            <div class="slide">
+                                <img src="fotoslider2.jpeg" alt="Fundación trabajando en comunidad 2">
+                            </div>
+                        </div>
+                        <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                        <div class="slider-dots" id="sliderDots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="container resolucion-wrap">
@@ -693,11 +853,13 @@
                 <div class="mission-item">
                     <i class="fas fa-hand-sparkles"></i>
                     <h3>Valores</h3>
-                    <p>•	Sostenibilidad: Impulsamos la acuaponía como un modelo alimentario limpio y ecológico.
-•	Dignidad Humana: Honramos a nuestros adultos mayores con actividades que activan su mente y cuerpo.
-•	Cultura de Prevención: Educamos a los niños en seguridad vial para salvar vidas en las calles.
-•	Compromiso Territorial: Trabajamos con orgullo desde el Guayas para todo el país, tendiendo puentes de cooperación internacional.
-•	Empoderamiento: Capacitamos a las personas para que lideren su propio desarrollo.</p>
+                    <p>
+                        • Sostenibilidad: Impulsamos la acuaponía como un modelo alimentario limpio y ecológico.<br>
+                        • Dignidad Humana: Honramos a nuestros adultos mayores con actividades que activan su mente y cuerpo.<br>
+                        • Cultura de Prevención: Educamos a los niños en seguridad vial para salvar vidas en las calles.<br>
+                        • Compromiso Territorial: Trabajamos con orgullo desde el Guayas para todo el país, tendiendo puentes de cooperación internacional.<br>
+                        • Empoderamiento: Capacitamos a las personas para que lideren su propio desarrollo.
+                    </p>
                 </div>
             </div>
         </section>
@@ -777,7 +939,125 @@
         </div>
     </footer>
 
+    <!-- LIGHTBOX / POPUP -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="closeLightbox"><i class="fas fa-times"></i></button>
+            <img id="lightboxImg" src="" alt="Imagen ampliada">
+        </div>
+    </div>
+
     <script>
+        // ========== SLIDER DE IMÁGENES ==========
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            slides[index].classList.add('active');
+            currentSlide = index;
+
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+            resetAutoSlide();
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+            resetAutoSlide();
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                nextSlide();
+            }, 4000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetAutoSlide();
+            });
+        });
+
+        startAutoSlide();
+
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+
+        // ========== LIGHTBOX / POPUP ==========
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        function openLightbox(imgSrc) {
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightboxFunction() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        closeLightbox.addEventListener('click', closeLightboxFunction);
+
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) {
+                closeLightboxFunction();
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightboxFunction();
+            }
+        });
+
+        // Agregar evento de clic a las imágenes del slider
+        slides.forEach(slide => {
+            slide.addEventListener('click', function () {
+                const img = this.querySelector('img');
+                if (img) {
+                    openLightbox(img.src);
+                }
+            });
+        });
+
+        // ========== GALERÍA POR AÑOS ==========
         const imagenesPorAno = {
             '2024': [
                 '2024 (1).jpeg',
@@ -803,6 +1083,7 @@
                 img.src = imgSrc;
                 img.alt = `Fundación trabajo año ${año}`;
                 img.loading = 'lazy';
+                img.addEventListener('click', () => openLightbox(imgSrc));
                 container.appendChild(img);
             });
         }
@@ -818,6 +1099,7 @@
 
         cargarGaleria('2024');
 
+        // ========== FUNCIONES DE COPIADO ==========
         function copiarAlPortapapeles(texto, tipoMensaje) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(texto).then(() => {
