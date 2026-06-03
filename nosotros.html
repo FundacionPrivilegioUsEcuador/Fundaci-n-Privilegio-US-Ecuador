@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Fundación Privilegio US Ecuador | Nosotros</title>
+    <!-- Google Fonts: Inter, sistema limpio -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a2c38;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #283455;
+        }
+
+        .section-subhead {
+            font-size: 1rem;
+            color: #4a6272;
+            max-width: 720px;
+            margin-bottom: 2rem;
+        }
+
+        /* Header minimal - móvil responsive */
+        .site-header {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e9eef2;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #c4212e, #283455);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #283455;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #c4212e;
+        }
+
+        /* Hero interno */
+        .inner-hero {
+            background: linear-gradient(135deg, #283455 0%, #1a2538 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .inner-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .inner-hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Secciones generales */
+        .section-padding {
+            padding: 3rem 0;
+        }
+
+        .section-bg-light {
+            background: #fefaf9;
+        }
+
+        .section-bg-white {
+            background: white;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0e2de;
+            height: 100%;
+        }
+
+        .info-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #283455;
+        }
+
+        .info-card h3 i {
+            color: #c4212e;
+            font-size: 1.5rem;
+        }
+
+        .info-card p, .info-card ul {
+            color: #415f6b;
+            font-size: 0.95rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-card ul li:before {
+            content: "✓";
+            color: #c4212e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Misión/Visión/Valores en grid */
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .mv-card {
+            border-left: 3px solid #c4212e;
+            padding-left: 1.2rem;
+        }
+
+        .mv-card i {
+            font-size: 1.8rem;
+            color: #283455;
+            margin-bottom: 0.8rem;
+        }
+
+        .mv-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1f3b4c;
+        }
+
+        .mv-card p {
+            color: #415f6b;
+            font-size: 0.9rem;
+        }
+
+        .valores-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .valor-item {
+            background: #fefaf9;
+            padding: 1rem;
+            border-radius: 12px;
+            border-left: 3px solid #c4212e;
+        }
+
+        .valor-item strong {
+            color: #283455;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Donaciones */
+        .donation-section {
+            background: #fefaf9;
+            padding: 2.5rem 0;
+            border-top: 1px solid #f0e6e3;
+            border-bottom: 1px solid #f0e6e3;
+        }
+
+        .donation-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .donation-info {
+            flex: 1.2;
+        }
+
+        .bank-detail {
+            background: #ffffff;
+            border: 1px solid #e2e8ed;
+            border-radius: 20px;
+            padding: 1.3rem;
+            margin-top: 1rem;
+        }
+
+        .bank-detail h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #283455;
+            flex-wrap: wrap;
+        }
+
+        .account-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            background: #f9f5f3;
+            padding: 0.5rem 0.6rem;
+            border-radius: 60px;
+            width: fit-content;
+        }
+
+        .account-number {
+            font-family: monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: #f1eae7;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            letter-spacing: 1px;
+            color: #c4212e;
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid #cbdde4;
+            padding: 0.25rem 0.8rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #283455;
+            border-color: #283455;
+            color: white;
+        }
+
+        .bank-meta {
+            margin: 0.8rem 0 0.3rem 0;
+            color: #2f5c70;
+            font-size: 0.85rem;
+        }
+
+        .email-in-bank {
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed #e0cfc9;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        .email-in-bank i {
+            color: #c4212e;
+            font-size: 0.9rem;
+        }
+
+        .email-in-bank a {
+            color: #283455;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #dcc9c2;
+        }
+
+        /* Contacto */
+        .contact-info-simple {
+            background: #ffffff;
+            padding: 2.5rem 0 2rem;
+            border-top: 1px solid #efe8e5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item-simple {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item-simple i {
+            width: 32px;
+            color: #c4212e;
+            font-size: 1.2rem;
+        }
+
+        .contact-item-simple a,
+        .contact-item-simple span {
+            color: #2c5a6e;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background: #f7f3f1;
+            padding: 1.5rem 0;
+            font-size: 0.75rem;
+            color: #486b78;
+            text-align: center;
+            border-top: 1px solid #e9e0dc;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .header-flex {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .inner-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .inner-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.2rem;
+            }
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #283455;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            z-index: 1000;
+            backdrop-filter: blur(6px);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 480px) {
+            .toast-msg {
+                white-space: normal;
+                text-align: center;
+                max-width: 90%;
+            }
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-back-home:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #c4212e;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <img src="logo.png" alt="Fundación Privilegio US Ecuador Logo" class="logo-img">
+                <span class="logo-text">Fundación Privilegio US Ecuador</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#donaciones">Donaciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Nosotros (subpágina completa) -->
+        <section id="nosotros">
+            <!-- Hero interno -->
+            <div class="inner-hero">
+                <div class="container">
+                    <h1>¿Quiénes Somos?</h1>
+                    <p>Bienvenidos a la Fundación Privilegio US-Ecuador</p>
+                    <a href="index.html" class="btn-back-home"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+                </div>
+            </div>
+
+            <!-- Quiénes Somos - texto completo -->
+            <div class="section-padding section-bg-white">
+                <div class="container">
+                    <div class="two-columns">
+                        <div class="info-card">
+                            <h3><i class="fas fa-users"></i> Nuestra Identidad</h3>
+                            <p>Somos una organización dedicada a transformar el conocimiento y el bienestar en herramientas de equidad social. Trabajamos desde la provincia del Guayas con proyección a todo el Ecuador, impulsando proyectos sostenibles y educativos para que el desarrollo humano deje de ser un privilegio de pocos y se convierta en un derecho de todos.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-bullseye"></i> Nuestro Propósito</h3>
+                            <p>Proponer y ejecutar programas y servicios direccionados para la inclusión económica y social, con énfasis en los grupos de atención prioritaria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Objetivos -->
+            <div class="section-padding section-bg-light">
+                <div class="container">
+                    <div class="info-card" style="max-width: 900px; margin: 0 auto;">
+                        <h3><i class="fas fa-flag-checkered"></i> Objetivos Estratégicos</h3>
+                        <ul>
+                            <li>Identificar, gestionar e implementar alianzas estratégicas con organizaciones nacionales e internacionales con acciones que impacten y contribuyan en el desarrollo social y económico de los grupos de atención prioritaria.</li>
+                            <li>Fortalecer la soberanía alimentaria a través de sistemas de acuaponía en comunidades vulnerables.</li>
+                            <li>Promover un envejecimiento activo y digno en los adultos mayores mediante programas de estimulación física y cognitiva.</li>
+                            <li>Formar a la niñez en seguridad vial para reducir accidentes de tránsito y salvar vidas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Misión, Visión y Valores -->
+            <div class="section-padding section-bg-white">
+                <div class="container">
+                    <h2 style="text-align: center;">Misión, Visión y Valores</h2>
+                    <div class="mission-vision-grid">
+                        <div class="mv-card">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Misión</h3>
+                            <p>Capacitar a las comunidades ecuatorianas para asegurar su soberanía alimentaria mediante la acuaponía, promover un envejecimiento activo y digno en los adultos mayores, y formar a la niñez en seguridad vial.</p>
+                        </div>
+                        <div class="mv-card">
+                            <i class="fas fa-eye"></i>
+                            <h3>Visión</h3>
+                            <p>Para el año 2031, ser la Fundación Privilegio US-Ecuador la organización referente en el país en desarrollo comunitario e inclusión social, reconocida por erradicar la inseguridad alimentaria, dignificar la vida del adulto mayor y construir una cultura vial responsable.</p>
+                        </div>
+                        <div class="mv-card">
+                            <i class="fas fa-hand-sparkles"></i>
+                            <h3>Valores</h3>
+                            <div class="valores-list">
+                                <div class="valor-item"><strong>Sostenibilidad:</strong> Impulsamos la acuaponía como un modelo alimentario limpio y ecológico.</div>
+                                <div class="valor-item"><strong>Dignidad Humana:</strong> Honramos a nuestros adultos mayores con actividades que activan su mente y cuerpo.</div>
+                                <div class="valor-item"><strong>Cultura de Prevención:</strong> Educamos a los niños en seguridad vial para salvar vidas en las calles.</div>
+                                <div class="valor-item"><strong>Compromiso Territorial:</strong> Trabajamos con orgullo desde el Guayas para todo el país, tendiendo puentes de cooperación internacional.</div>
+                                <div class="valor-item"><strong>Empoderamiento:</strong> Capacitamos a las personas para que lideren su propio desarrollo.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Donaciones -->
+        <section id="donaciones" class="donation-section">
+            <div class="container donation-flex">
+                <div class="donation-info">
+                    <h2>Apoya nuestra causa</h2>
+                    <p>Cada donación fortalece programas de alimentación, capacitación laboral y atención a grupos vulnerables. Trabajamos con cuentas claras.</p>
+                    <div class="bank-detail">
+                        <h3><i class="fas fa-university"></i> Cuenta Corriente · Banco Pacífico</h3>
+                        <div class="account-row">
+                            <span class="account-number" id="cuentaText">8743754</span>
+                            <button class="copy-btn" onclick="copiarAlPortapapeles('8743754', 'Número de cuenta')"><i class="far fa-copy"></i> Copiar</button>
+                        </div>
+                        <div class="bank-meta">
+                            <p><strong>Beneficiario:</strong> Fundación Privilegio US Ecuador</p>
+                            <p><strong>Tipo de cuenta:</strong> Corriente / Código Swift: PACIECEG</p>
+                        </div>
+                        <p style="font-size: 0.8rem; margin: 0.6rem 0 0.3rem 0;"><i class="fas fa-check-circle" style="color:#c4212e;"></i> Donaciones deducibles de impuestos, emitimos certificados oficiales.</p>
+
+                        <div class="email-in-bank">
+                            <i class="fas fa-envelope"></i>
+                            <span>Para donaciones empresariales o en especie: </span>
+                            <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
+                            <button class="copy-btn" style="margin-left: 0.2rem;" onclick="copiarAlPortapapeles('info@privilegiousecuador.org', 'Correo electrónico')"><i class="far fa-copy"></i> Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="contact-info-simple">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-item-simple">
+                        <i class="fas fa-map-pin"></i>
+                        <span>Guayaquil, Ecuador<br>Av. Francisco de Orellana y Plaza Lagos, Of. 504</span>
+                    </div>
+                    <div class="contact-item-simple">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
+                    </div>
+                    <div class="contact-item-simple">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+593 4 256 7890</span>
+                    </div>
+                    <div class="contact-item-simple">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+593 98 765 4321</span>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid #efe2dd; margin-top: 1rem; padding-top: 1rem; text-align: center; font-size:0.75rem;">
+                    <i class="fas fa-file-contract"></i> Personería Jurídica: Resolución MIES-CZ-8-DDGM-2025-0063-R · Cuenta corriente Banco Pacífico #8743754
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Fundación Privilegio US Ecuador — Compromiso, ética y transparencia.</p>
+            <p><strong>Cuenta donaciones: 8743754 (Banco Pacífico)</strong></p>
+            <p style="margin-top: 0.5rem;">&copy; 2025 · info@privilegiousecuador.org</p>
+        </div>
+    </footer>
+
+    <script>
+        function copiarAlPortapapeles(texto, tipoMensaje) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(texto).then(() => {
+                    mostrarNotificacion(`${tipoMensaje} copiado: ${texto}`);
+                }).catch(() => fallbackCopy(texto));
+            } else {
+                fallbackCopy(texto);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            mostrarNotificacion('Copiado al portapapeles ✓');
+        }
+
+        function mostrarNotificacion(msg) {
+            let toast = document.createElement('div');
+            toast.className = 'toast-msg';
+            toast.innerText = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 400);
+            }, 2000);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === "#" || targetId === "") return;
+                const targetElem = document.querySelector(targetId);
+                if (targetElem) {
+                    e.preventDefault();
+                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
