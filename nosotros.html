@@ -106,7 +106,7 @@
             color: #c4212e;
         }
 
-        /* Hero interno */
+        /* Hero interno mejorado */
         .inner-hero {
             background: linear-gradient(135deg, #283455 0%, #1a2538 100%);
             color: white;
@@ -125,6 +125,84 @@
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Equipo directivo dentro de la franja azul - FOTOS MÁS GRANDES */
+        .team-inline {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .team-inline-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .team-inline-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        .team-inline-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            text-align: center;
+            min-width: 200px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .team-inline-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* FOTO MÁS GRANDE - de 70px a 100px */
+        .team-inline-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #c4212e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .team-inline-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-inline-avatar i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .team-inline-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.3rem;
+        }
+
+        .team-inline-role {
+            font-size: 0.75rem;
+            color: #ffcc00;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         /* Secciones generales */
@@ -425,6 +503,21 @@
             h2 {
                 font-size: 1.5rem;
             }
+
+            .team-inline-grid {
+                gap: 1.5rem;
+            }
+
+            .team-inline-card {
+                min-width: 160px;
+                padding: 1rem 1.2rem;
+            }
+
+            /* Fotos un poco más pequeñas en tablet pero aún grandes */
+            .team-inline-avatar {
+                width: 80px;
+                height: 80px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -434,6 +527,24 @@
 
             .info-card {
                 padding: 1.2rem;
+            }
+
+            .team-inline-grid {
+                gap: 1rem;
+            }
+
+            .team-inline-card {
+                min-width: 140px;
+                padding: 0.8rem 1rem;
+            }
+
+            .team-inline-avatar {
+                width: 70px;
+                height: 70px;
+            }
+
+            .team-inline-card h4 {
+                font-size: 0.9rem;
             }
         }
 
@@ -459,26 +570,6 @@
                 max-width: 90%;
             }
         }
-
-        .btn-back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            margin-top: 1rem;
-            transition: all 0.2s;
-        }
-
-        .btn-back-home:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: #c4212e;
-        }
     </style>
 </head>
 <body>
@@ -501,12 +592,46 @@
     <main>
         <!-- Sección Nosotros (subpágina completa) -->
         <section id="nosotros">
-            <!-- Hero interno -->
+            <!-- Hero interno con equipo directivo integrado -->
             <div class="inner-hero">
                 <div class="container">
                     <h1>¿Quiénes Somos?</h1>
                     <p>Bienvenidos a la Fundación Privilegio US-Ecuador</p>
-                    <a href="index.html" class="btn-back-home"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+                    
+                    <!-- EQUIPO DIRECTIVO DENTRO DE LA FRANJA AZUL -->
+                    <div class="team-inline">
+                        <div class="team-inline-title">
+                            <i class="fas fa-users"></i> Nuestro Equipo Directivo
+                        </div>
+                        <div class="team-inline-grid">
+                            <!-- Presidente: Andrés Kang García -->
+                            <div class="team-inline-card">
+                                <div class="team-inline-avatar">
+                                    <img src="foto-andres.jpg" alt="Andrés Kang García" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=AK'">
+                                </div>
+                                <h4>Andrés Kang García</h4>
+                                <div class="team-inline-role">Presidente</div>
+                            </div>
+
+                            <!-- Vicepresidente: Guillermo Kang García -->
+                            <div class="team-inline-card">
+                                <div class="team-inline-avatar">
+                                    <img src="foto-guillermo.jpg" alt="Guillermo Kang García" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=GK'">
+                                </div>
+                                <h4>Guillermo Kang García</h4>
+                                <div class="team-inline-role">Vicepresidente</div>
+                            </div>
+
+                            <!-- Secretaria: Sandra Aguilar Limones -->
+                            <div class="team-inline-card">
+                                <div class="team-inline-avatar">
+                                    <img src="foto-sandra.jpg" alt="Sandra Aguilar Limones" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=SA'">
+                                </div>
+                                <h4>Sandra Aguilar Limones</h4>
+                                <div class="team-inline-role">Secretaria</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -595,10 +720,8 @@
                             <span>Para donaciones empresariales o en especie: </span>
                             <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
                             <a href="mailto:fundacionprivilegio@gmail.com">fundacionprivilegio@gmail.com</a>
-
                             <button class="copy-btn" style="margin-left: 0.2rem;" onclick="copiarAlPortapapeles('info@privilegiousecuador.org', 'Correo electrónico')"><i class="far fa-copy"></i> Copiar</button>
                             <button class="copy-btn" style="margin-left: 0.2rem;" onclick="copiarAlPortapapeles('fundacionprivilegio@gmail.com', 'Correo electrónico')"><i class="far fa-copy"></i> Copiar</button>
-
                         </div>
                     </div>
                 </div>
@@ -615,12 +738,14 @@
                     </div>
                     <div class="contact-item-simple">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
-                        <a href="mailto:fundacionprivilegio@gmail.com">fundacionprivilegio@gmail.com</a>
+                        <div style="display: flex; flex-direction: column;">
+                            <a href="mailto:info@privilegiousecuador.org">info@privilegiousecuador.org</a>
+                            <a href="mailto:fundacionprivilegio@gmail.com">fundacionprivilegio@gmail.com</a>
+                        </div>
                     </div>
                     <div class="contact-item-simple">
                         <i class="fas fa-phone-alt"></i>
-                        <span> 099 509 6428</span>
+                        <span>099 509 6428</span>
                     </div>
                     <div class="contact-item-simple">
                         <i class="fab fa-whatsapp"></i>
