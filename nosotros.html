@@ -5,11 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <title>Fundación Privilegio US Ecuador | Nosotros</title>
     <link rel="icon" type="image/png" href="logo2.png">
-    <!-- Google Fonts: Inter, sistema limpio -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (iconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* ===== VARIABLES CSS ===== */
+        :root {
+            --bg-primary: #f5f7fa;
+            --bg-secondary: #ffffff;
+            --bg-card: #f8faff;
+            --bg-input: #f0f3fa;
+            --bg-hero: linear-gradient(135deg, #1a2538 0%, #283455 50%, #1f3348 100%);
+            --bg-donation: linear-gradient(160deg, #f0f3fa 0%, #fafbfd 100%);
+            --bg-contact: #f8faff;
+            --bg-footer: linear-gradient(135deg, #1a2538, #283455);
+            --bg-header: rgba(255, 255, 255, 0.92);
+            --bg-badge: rgba(196, 33, 46, 0.08);
+            --bg-lightbox: rgba(0, 0, 0, 0.92);
+            --bg-toast: #283455;
+            --bg-mv-card: #f8faff;
+            --bg-valor-item: #f8faff;
+
+            --text-primary: #1a2c38;
+            --text-secondary: #4a6272;
+            --text-muted: #2c5a6e;
+            --text-white: #ffffff;
+            --text-footer: rgba(255, 255, 255, 0.75);
+            --text-footer-strong: #ffffff;
+
+            --border-color: rgba(40, 52, 85, 0.06);
+            --border-header: rgba(40, 52, 85, 0.1);
+            --border-card: rgba(40, 52, 85, 0.06);
+            --border-account: rgba(40, 52, 85, 0.06);
+
+            --shadow-card: 0 4px 20px rgba(40, 52, 85, 0.04);
+            --shadow-card-hover: 0 12px 40px rgba(40, 52, 85, 0.08);
+            --shadow-btn: 0 4px 20px rgba(196, 33, 46, 0.25);
+            --shadow-toast: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+            --color-primary: #283455;
+            --color-accent: #c4212e;
+            --color-accent-light: #e84a5a;
+            --color-accent-gradient: linear-gradient(135deg, #c4212e, #e84a5a);
+
+            --radius-card: 20px;
+            --radius-btn: 40px;
+            --transition: 0.4s;
+        }
+
+        /* ===== MODO OSCURO ===== */
+        [data-theme="dark"] {
+            --bg-primary: #0f1420;
+            --bg-secondary: #181f2e;
+            --bg-card: #1f283a;
+            --bg-input: #1f283a;
+            --bg-hero: linear-gradient(135deg, #0a0e17 0%, #181f2e 50%, #0f1420 100%);
+            --bg-donation: linear-gradient(160deg, #0f1420 0%, #181f2e 100%);
+            --bg-contact: #0f1420;
+            --bg-footer: linear-gradient(135deg, #0a0e17, #181f2e);
+            --bg-header: rgba(24, 31, 46, 0.95);
+            --bg-badge: rgba(196, 33, 46, 0.15);
+            --bg-lightbox: rgba(0, 0, 0, 0.95);
+            --bg-toast: #1f283a;
+            --bg-mv-card: #1f283a;
+            --bg-valor-item: #181f2e;
+
+            --text-primary: #e8edf5;
+            --text-secondary: #94a8b8;
+            --text-muted: #7a8f9e;
+
+            --border-color: rgba(255, 255, 255, 0.06);
+            --border-header: rgba(255, 255, 255, 0.08);
+            --border-card: rgba(255, 255, 255, 0.06);
+            --border-account: rgba(255, 255, 255, 0.06);
+
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.2);
+            --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.3);
+            --shadow-btn: 0 4px 20px rgba(196, 33, 46, 0.3);
+            --shadow-toast: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== ESTILOS GENERALES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -18,10 +93,11 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #1a2c38;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.5;
             scroll-behavior: smooth;
+            transition: background var(--transition), color var(--transition);
         }
 
         .container {
@@ -33,29 +109,31 @@
         h1, h2, h3 {
             font-weight: 600;
             letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #283455;
         }
 
         .section-subhead {
             font-size: 1rem;
-            color: #4a6272;
+            color: var(--text-secondary);
             max-width: 720px;
             margin-bottom: 2rem;
         }
 
-        /* Header minimal - móvil responsive */
+        /* ===== HEADER ===== */
         .site-header {
             padding: 1rem 0;
-            border-bottom: 1px solid #e9eef2;
-            background: white;
+            background: var(--bg-header);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--border-header);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: background var(--transition), border-color var(--transition);
         }
 
         .header-flex {
@@ -82,10 +160,70 @@
         .logo-text {
             font-weight: 700;
             font-size: 1.1rem;
-            background: linear-gradient(135deg, #c4212e, #283455);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: var(--text-primary);
+            transition: color var(--transition);
+        }
+
+        .logo-text span {
+            color: var(--color-accent);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 40px;
+            padding: 0.3rem 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--color-accent);
+            transform: scale(1.02);
+        }
+
+        .theme-toggle i {
+            font-size: 0.9rem;
+            transition: color var(--transition);
+        }
+
+        .theme-toggle .fa-sun { color: #f59e0b; }
+        .theme-toggle .fa-moon { color: #94a3b8; }
+
+        .theme-toggle .toggle-track {
+            width: 36px;
+            height: 20px;
+            background: var(--border-color);
+            border-radius: 20px;
+            position: relative;
+            transition: background var(--transition);
+            flex-shrink: 0;
+        }
+
+        .theme-toggle .toggle-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform var(--transition), background var(--transition);
+        }
+
+        [data-theme="dark"] .theme-toggle .toggle-thumb {
+            transform: translateX(16px);
         }
 
         .nav-links {
@@ -98,49 +236,87 @@
         .nav-links a {
             text-decoration: none;
             font-weight: 500;
-            color: #283455;
+            color: var(--text-primary);
             font-size: 0.85rem;
-            transition: color 0.2s;
+            transition: all 0.3s;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 60%;
         }
 
         .nav-links a:hover {
-            color: #c4212e;
+            color: var(--color-accent);
         }
 
-        /* Hero interno mejorado */
-        .inner-hero {
-            background: linear-gradient(135deg, #283455 0%, #1a2538 100%);
+        .nav-links a.active {
+            background: var(--color-primary);
             color: white;
-            padding: 3rem 0;
+        }
+
+        .nav-links a.active::after {
+            display: none;
+        }
+
+        /* ===== HERO INTERNO ===== */
+        .inner-hero {
+            background: var(--bg-hero);
+            color: white;
+            padding: 3.5rem 0;
             text-align: center;
+            border-bottom: 4px solid var(--color-accent);
+            transition: background var(--transition), border-color var(--transition);
         }
 
         .inner-hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
             color: white;
+            font-weight: 700;
         }
 
-        .inner-hero p {
-            font-size: 1rem;
-            opacity: 0.9;
+        .inner-hero > .container > p {
+            font-size: 1.1rem;
+            opacity: 0.85;
             max-width: 600px;
             margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        /* Equipo directivo dentro de la franja azul - FOTOS MÁS GRANDES */
+        /* ===== EQUIPO DIRECTIVO ===== */
         .team-inline {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.15);
         }
 
         .team-inline-title {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
+            font-weight: 500;
+        }
+
+        .team-inline-title i {
+            color: var(--color-accent);
+            margin-right: 8px;
         }
 
         .team-inline-grid {
@@ -152,33 +328,40 @@
         }
 
         .team-inline-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            border-radius: 20px;
-            padding: 1.5rem 1.8rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-card);
+            padding: 1.8rem 2rem;
             text-align: center;
             min-width: 200px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .team-inline-card:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* FOTO MÁS GRANDE - de 70px a 100px */
         .team-inline-avatar {
-            width: 100px;
-            height: 100px;
+            width: 110px;
+            height: 110px;
             margin: 0 auto 1rem;
             border-radius: 50%;
             overflow: hidden;
-            background: #c4212e;
+            background: var(--color-accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 3px solid rgba(255, 255, 255, 0.5);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            transition: all var(--transition);
+        }
+
+        .team-inline-card:hover .team-inline-avatar {
+            border-color: var(--color-accent);
+            transform: scale(1.05);
         }
 
         .team-inline-avatar img {
@@ -188,35 +371,37 @@
         }
 
         .team-inline-avatar i {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: white;
         }
 
         .team-inline-card h4 {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
         .team-inline-role {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #ffcc00;
             font-weight: 500;
             letter-spacing: 0.5px;
         }
 
-        /* Secciones generales */
+        /* ===== SECCIONES ===== */
         .section-padding {
-            padding: 3rem 0;
+            padding: 3.5rem 0;
         }
 
         .section-bg-light {
-            background: #fefaf9;
+            background: var(--bg-donation);
+            transition: background var(--transition);
         }
 
         .section-bg-white {
-            background: white;
+            background: var(--bg-secondary);
+            transition: background var(--transition);
         }
 
         .two-columns {
@@ -226,12 +411,18 @@
         }
 
         .info-card {
-            background: white;
-            border-radius: 20px;
-            padding: 1.8rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid #f0e2de;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-card);
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
             height: 100%;
+            transition: all var(--transition);
+        }
+
+        .info-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
         }
 
         .info-card h3 {
@@ -240,17 +431,17 @@
             gap: 10px;
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            color: #283455;
         }
 
         .info-card h3 i {
-            color: #c4212e;
+            color: var(--color-accent);
             font-size: 1.5rem;
         }
 
         .info-card p, .info-card ul {
-            color: #415f6b;
+            color: var(--text-secondary);
             font-size: 0.95rem;
+            transition: color var(--transition);
         }
 
         .info-card ul {
@@ -260,46 +451,60 @@
 
         .info-card ul li {
             margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
+            padding-left: 1.8rem;
             position: relative;
         }
 
         .info-card ul li:before {
             content: "✓";
-            color: #c4212e;
+            color: var(--color-accent);
             font-weight: bold;
             position: absolute;
             left: 0;
+            font-size: 1.2rem;
         }
 
-        /* Misión/Visión/Valores en grid */
+        /* ===== MISIÓN, VISIÓN, VALORES ===== */
         .mission-vision-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.8rem;
+            gap: 2rem;
             margin-top: 1.5rem;
         }
 
         .mv-card {
-            border-left: 3px solid #c4212e;
-            padding-left: 1.2rem;
+            background: var(--bg-mv-card);
+            padding: 1.8rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--color-accent);
+            transition: all var(--transition);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
         }
 
         .mv-card i {
-            font-size: 1.8rem;
-            color: #283455;
+            font-size: 2rem;
+            color: var(--color-primary);
             margin-bottom: 0.8rem;
+            transition: color var(--transition);
+        }
+
+        [data-theme="dark"] .mv-card i {
+            color: #e8edf5;
         }
 
         .mv-card h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: #1f3b4c;
         }
 
         .mv-card p {
-            color: #415f6b;
+            color: var(--text-secondary);
             font-size: 0.9rem;
+            transition: color var(--transition);
         }
 
         .valores-list {
@@ -310,30 +515,45 @@
         }
 
         .valor-item {
-            background: #fefaf9;
-            padding: 1rem;
+            background: var(--bg-valor-item);
+            padding: 1rem 1.2rem;
             border-radius: 12px;
-            border-left: 3px solid #c4212e;
+            border-left: 3px solid var(--color-accent);
+            box-shadow: var(--shadow-card);
+            transition: all var(--transition);
         }
 
         .valor-item strong {
-            color: #283455;
+            color: var(--text-primary);
             display: block;
             margin-bottom: 0.3rem;
+            transition: color var(--transition);
         }
 
-        /* Donaciones */
+        .valor-item strong i {
+            color: var(--color-accent);
+            margin-right: 6px;
+        }
+
+        .valor-item span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: color var(--transition);
+        }
+
+        /* ===== DONACIONES ===== */
         .donation-section {
-            background: #fefaf9;
-            padding: 2.5rem 0;
-            border-top: 1px solid #f0e6e3;
-            border-bottom: 1px solid #f0e6e3;
+            padding: 4rem 0;
+            background: var(--bg-donation);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            transition: background var(--transition), border-color var(--transition);
         }
 
         .donation-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 2rem;
             align-items: flex-start;
             justify-content: space-between;
         }
@@ -342,12 +562,25 @@
             flex: 1.2;
         }
 
+        .donation-info > p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+
         .bank-detail {
-            background: #ffffff;
-            border: 1px solid #e2e8ed;
-            border-radius: 20px;
-            padding: 1.3rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 1.8rem;
             margin-top: 1rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-card);
+        }
+
+        .bank-detail:hover {
+            box-shadow: var(--shadow-card-hover);
+            border-color: rgba(196, 33, 46, 0.15);
         }
 
         .bank-detail h3 {
@@ -356,8 +589,11 @@
             gap: 8px;
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
-            color: #283455;
             flex-wrap: wrap;
+        }
+
+        .bank-detail h3 i {
+            color: var(--color-accent);
         }
 
         .account-row {
@@ -366,79 +602,93 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin: 1rem 0;
-            background: #f9f5f3;
-            padding: 0.5rem 0.6rem;
+            background: var(--bg-input);
+            padding: 0.6rem 1rem;
             border-radius: 60px;
             width: fit-content;
+            border: 1px solid var(--border-account);
+            transition: background var(--transition), border-color var(--transition);
         }
 
         .account-number {
-            font-family: monospace;
+            font-family: 'Inter', monospace;
             font-size: 1.2rem;
             font-weight: 700;
-            background: #f1eae7;
-            padding: 0.2rem 0.8rem;
+            background: var(--color-primary);
+            padding: 0.2rem 1.2rem;
             border-radius: 40px;
-            letter-spacing: 1px;
-            color: #c4212e;
+            letter-spacing: 2px;
+            color: white;
+            transition: background var(--transition);
         }
 
         .copy-btn {
-            background: none;
-            border: 1px solid #cbdde4;
-            padding: 0.25rem 0.8rem;
-            border-radius: 40px;
+            background: transparent;
+            border: 2px solid var(--color-accent);
+            padding: 0.3rem 1.2rem;
+            border-radius: var(--radius-btn);
             cursor: pointer;
             font-size: 0.7rem;
-            font-weight: 500;
-            transition: all 0.2s;
+            font-weight: 600;
+            color: var(--color-accent);
+            transition: all 0.3s;
         }
 
         .copy-btn:hover {
-            background: #283455;
-            border-color: #283455;
+            background: var(--color-accent);
+            border-color: var(--color-accent);
             color: white;
+            transform: scale(1.02);
         }
 
         .bank-meta {
             margin: 0.8rem 0 0.3rem 0;
-            color: #2f5c70;
+            color: var(--text-muted);
             font-size: 0.85rem;
+            transition: color var(--transition);
         }
 
         .email-in-bank {
             margin-top: 1rem;
-            padding-top: 0.8rem;
-            border-top: 1px dashed #e0cfc9;
+            padding-top: 1rem;
+            border-top: 2px dashed var(--border-color);
             display: flex;
             align-items: center;
             gap: 0.5rem;
             flex-wrap: wrap;
             font-size: 0.85rem;
+            transition: border-color var(--transition);
         }
 
         .email-in-bank i {
-            color: #c4212e;
+            color: var(--color-accent);
             font-size: 0.9rem;
         }
 
         .email-in-bank a {
-            color: #283455;
+            color: var(--text-primary);
             font-weight: 500;
             text-decoration: none;
-            border-bottom: 1px solid #dcc9c2;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
         }
 
-        /* Contacto */
+        .email-in-bank a:hover {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* ===== CONTACTO ===== */
         .contact-info-simple {
-            background: #ffffff;
-            padding: 2.5rem 0 2rem;
-            border-top: 1px solid #efe8e5;
+            background: var(--bg-contact);
+            padding: 3.5rem 0 2.5rem;
+            border-top: 1px solid var(--border-color);
+            transition: background var(--transition), border-color var(--transition);
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
@@ -446,130 +696,129 @@
         .contact-item-simple {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 14px;
             flex-wrap: wrap;
+            padding: 1rem 1.2rem;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition);
+            box-shadow: 0 2px 10px rgba(40, 52, 85, 0.03);
+        }
+
+        .contact-item-simple:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card-hover);
         }
 
         .contact-item-simple i {
-            width: 32px;
-            color: #c4212e;
-            font-size: 1.2rem;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 12px;
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: background var(--transition);
         }
 
         .contact-item-simple a,
         .contact-item-simple span {
-            color: #2c5a6e;
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.85rem;
+            transition: color var(--transition);
         }
 
-        footer {
-            background: #f7f3f1;
-            padding: 1.5rem 0;
-            font-size: 0.75rem;
-            color: #486b78;
+        .contact-item-simple a:hover {
+            color: var(--color-accent);
+        }
+
+        .legal-footer {
+            border-top: 2px solid var(--border-color);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
             text-align: center;
-            border-top: 1px solid #e9e0dc;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            transition: border-color var(--transition), color var(--transition);
         }
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            .header-flex {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .two-columns {
-                grid-template-columns: 1fr;
-            }
-
-            .mission-vision-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .inner-hero h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .team-inline-grid {
-                gap: 1.5rem;
-            }
-
-            .team-inline-card {
-                min-width: 160px;
-                padding: 1rem 1.2rem;
-            }
-
-            /* Fotos un poco más pequeñas en tablet pero aún grandes */
-            .team-inline-avatar {
-                width: 80px;
-                height: 80px;
-            }
+        .legal-footer i {
+            color: var(--color-accent);
         }
 
-        @media (max-width: 480px) {
-            .inner-hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .info-card {
-                padding: 1.2rem;
-            }
-
-            .team-inline-grid {
-                gap: 1rem;
-            }
-
-            .team-inline-card {
-                min-width: 140px;
-                padding: 0.8rem 1rem;
-            }
-
-            .team-inline-avatar {
-                width: 70px;
-                height: 70px;
-            }
-
-            .team-inline-card h4 {
-                font-size: 0.9rem;
-            }
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-footer);
+            padding: 2.5rem 0;
+            font-size: 0.8rem;
+            color: var(--text-footer);
+            text-align: center;
+            border-top: 4px solid var(--color-accent);
+            transition: background var(--transition), border-color var(--transition);
         }
 
+        footer strong {
+            color: var(--text-footer-strong);
+        }
+
+        footer .container p {
+            margin-bottom: 0.3rem;
+        }
+
+        /* ===== TOAST ===== */
         .toast-msg {
             position: fixed;
-            bottom: 20px;
+            bottom: 24px;
             left: 50%;
             transform: translateX(-50%);
-            background: #283455;
+            background: var(--bg-toast);
             color: white;
-            padding: 8px 16px;
+            padding: 10px 28px;
             border-radius: 60px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             z-index: 1000;
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(12px);
             white-space: nowrap;
+            box-shadow: var(--shadow-toast);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: background var(--transition);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container { padding: 0 16px; }
+            .header-flex { flex-direction: column; align-items: center; text-align: center; }
+            .logo-area { justify-content: center; }
+            .nav-links { justify-content: center; gap: 0.6rem; }
+            .nav-links a { font-size: 0.8rem; padding: 0.3rem 0.8rem; }
+            .inner-hero h1 { font-size: 2rem; }
+            .inner-hero { padding: 2.5rem 0; }
+            .two-columns { grid-template-columns: 1fr; }
+            .mission-vision-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            h2 { font-size: 1.5rem; }
+            .team-inline-grid { gap: 1.5rem; }
+            .team-inline-card { min-width: 160px; padding: 1.2rem 1.5rem; }
+            .team-inline-avatar { width: 85px; height: 85px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .theme-toggle .toggle-track { width: 30px; height: 18px; }
+            .theme-toggle .toggle-thumb { width: 14px; height: 14px; }
         }
 
         @media (max-width: 480px) {
-            .toast-msg {
-                white-space: normal;
-                text-align: center;
-                max-width: 90%;
-            }
+            .inner-hero h1 { font-size: 1.6rem; }
+            .info-card { padding: 1.2rem; }
+            .team-inline-grid { gap: 1rem; }
+            .team-inline-card { min-width: 140px; padding: 1rem 1.2rem; }
+            .team-inline-avatar { width: 75px; height: 75px; }
+            .team-inline-card h4 { font-size: 0.9rem; }
+            .header-controls { width: 100%; justify-content: center; }
+            .toast-msg { white-space: normal; max-width: 90%; font-size: 0.7rem; padding: 8px 16px; }
         }
     </style>
 </head>
@@ -579,33 +828,38 @@
         <div class="container header-flex">
             <div class="logo-area">
                 <img src="logo.png" alt="Fundación Privilegio US Ecuador Logo" class="logo-img">
-                <span class="logo-text">Fundación Privilegio US Ecuador</span>
+                <span class="logo-text">Fundación <span>Privilegio</span> US Ecuador</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#donaciones">Donaciones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <div class="header-controls">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html" class="active">Nosotros</a></li>
+                    <li><a href="#donaciones">Donaciones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-sun"></i>
+                    <span class="toggle-track">
+                        <span class="toggle-thumb"></span>
+                    </span>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- Sección Nosotros (subpágina completa) -->
         <section id="nosotros">
-            <!-- Hero interno con equipo directivo integrado -->
             <div class="inner-hero">
                 <div class="container">
                     <h1>¿Quiénes Somos?</h1>
                     <p>Bienvenidos a la Fundación Privilegio US-Ecuador</p>
                     
-                    <!-- EQUIPO DIRECTIVO DENTRO DE LA FRANJA AZUL -->
                     <div class="team-inline">
                         <div class="team-inline-title">
                             <i class="fas fa-users"></i> Nuestro Equipo Directivo
                         </div>
                         <div class="team-inline-grid">
-                            <!-- Presidente: Andrés Kang García -->
                             <div class="team-inline-card">
                                 <div class="team-inline-avatar">
                                     <img src="foto-andres.jpg" alt="Andrés Kang García" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=AK'">
@@ -614,7 +868,6 @@
                                 <div class="team-inline-role">Presidente</div>
                             </div>
 
-                            <!-- Vicepresidente: Guillermo Kang García -->
                             <div class="team-inline-card">
                                 <div class="team-inline-avatar">
                                     <img src="foto-guillermo.jpg" alt="Guillermo Kang García" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=GK'">
@@ -623,7 +876,6 @@
                                 <div class="team-inline-role">Vicepresidente</div>
                             </div>
 
-                            <!-- Secretaria: Sandra Aguilar Limones -->
                             <div class="team-inline-card">
                                 <div class="team-inline-avatar">
                                     <img src="foto-sandra.jpg" alt="Sandra Aguilar Limones" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=SA'">
@@ -632,20 +884,18 @@
                                 <div class="team-inline-role">Secretaria</div>
                             </div>
 
-                                <div class="team-inline-card">
+                            <div class="team-inline-card">
                                 <div class="team-inline-avatar">
-                                    <img src="foto-carlos.jpg" alt="Carlos Pacheco Tomala<" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=CPT'">
+                                    <img src="foto-carlos.jpg" alt="Carlos Pacheco Tomala" onerror="this.src='https://placehold.co/200x200/c4212e/white?text=CPT'">
                                 </div>
                                 <h4>Carlos Pacheco Tomala</h4>
                                 <div class="team-inline-role">Socio</div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Quiénes Somos - texto completo -->
             <div class="section-padding section-bg-white">
                 <div class="container">
                     <div class="two-columns">
@@ -661,7 +911,6 @@
                 </div>
             </div>
 
-            <!-- Objetivos -->
             <div class="section-padding section-bg-light">
                 <div class="container">
                     <div class="info-card" style="max-width: 900px; margin: 0 auto;">
@@ -676,7 +925,6 @@
                 </div>
             </div>
 
-            <!-- Misión, Visión y Valores -->
             <div class="section-padding section-bg-white">
                 <div class="container">
                     <h2 style="text-align: center;">Misión, Visión y Valores</h2>
@@ -695,11 +943,11 @@
                             <i class="fas fa-hand-sparkles"></i>
                             <h3>Valores</h3>
                             <div class="valores-list">
-                                <div class="valor-item"><strong>Sostenibilidad:</strong> Impulsamos la acuaponía como un modelo alimentario limpio y ecológico.</div>
-                                <div class="valor-item"><strong>Dignidad Humana:</strong> Honramos a nuestros adultos mayores con actividades que activan su mente y cuerpo.</div>
-                                <div class="valor-item"><strong>Cultura de Prevención:</strong> Educamos a los niños en seguridad vial para salvar vidas en las calles.</div>
-                                <div class="valor-item"><strong>Compromiso Territorial:</strong> Trabajamos con orgullo desde el Guayas para todo el país, tendiendo puentes de cooperación internacional.</div>
-                                <div class="valor-item"><strong>Empoderamiento:</strong> Capacitamos a las personas para que lideren su propio desarrollo.</div>
+                                <div class="valor-item"><strong><i class="fas fa-leaf"></i> Sostenibilidad:</strong> <span>Impulsamos la acuaponía como un modelo alimentario limpio y ecológico.</span></div>
+                                <div class="valor-item"><strong><i class="fas fa-heart"></i> Dignidad Humana:</strong> <span>Honramos a nuestros adultos mayores con actividades que activan su mente y cuerpo.</span></div>
+                                <div class="valor-item"><strong><i class="fas fa-shield-alt"></i> Cultura de Prevención:</strong> <span>Educamos a los niños en seguridad vial para salvar vidas en las calles.</span></div>
+                                <div class="valor-item"><strong><i class="fas fa-handshake"></i> Compromiso Territorial:</strong> <span>Trabajamos con orgullo desde el Guayas para todo el país, tendiendo puentes de cooperación internacional.</span></div>
+                                <div class="valor-item"><strong><i class="fas fa-star"></i> Empoderamiento:</strong> <span>Capacitamos a las personas para que lideren su propio desarrollo.</span></div>
                             </div>
                         </div>
                     </div>
@@ -707,7 +955,6 @@
             </div>
         </section>
 
-        <!-- Sección Donaciones -->
         <section id="donaciones" class="donation-section">
             <div class="container donation-flex">
                 <div class="donation-info">
@@ -723,7 +970,7 @@
                             <p><strong>Beneficiario:</strong> Fundación Privilegio US Ecuador</p>
                             <p><strong>Tipo de cuenta:</strong> Corriente / Código Swift: PACIECEG</p>
                         </div>
-                        <p style="font-size: 0.8rem; margin: 0.6rem 0 0.3rem 0;"><i class="fas fa-check-circle" style="color:#c4212e;"></i> Donaciones deducibles de impuestos, emitimos certificados oficiales.</p>
+                        <p style="font-size: 0.8rem; margin: 0.6rem 0 0.3rem 0;"><i class="fas fa-check-circle" style="color:var(--color-accent);"></i> Donaciones deducibles de impuestos, emitimos certificados oficiales.</p>
 
                         <div class="email-in-bank">
                             <i class="fas fa-envelope"></i>
@@ -738,7 +985,6 @@
             </div>
         </section>
 
-        <!-- Sección Contacto -->
         <section id="contacto" class="contact-info-simple">
             <div class="container">
                 <div class="contact-grid">
@@ -762,7 +1008,7 @@
                         <span>099 509 6428</span>
                     </div>
                 </div>
-                <div style="border-top: 1px solid #efe2dd; margin-top: 1rem; padding-top: 1rem; text-align: center; font-size:0.75rem;">
+                <div class="legal-footer">
                     <i class="fas fa-file-contract"></i> Personería Jurídica: Resolución MIES-CZ-8-DDGM-2025-0063-R · Cuenta corriente Banco Pacífico #8743754
                 </div>
             </div>
@@ -778,14 +1024,31 @@
     </footer>
 
     <script>
+        // ===== MODO OSCURO/CLARO =====
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+        // ===== COPIAR =====
         function copiarAlPortapapeles(texto, tipoMensaje) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(texto).then(() => {
                     mostrarNotificacion(`${tipoMensaje} copiado: ${texto}`);
                 }).catch(() => fallbackCopy(texto));
-            } else {
-                fallbackCopy(texto);
-            }
+            } else { fallbackCopy(texto); }
         }
 
         function fallbackCopy(text) {
@@ -803,14 +1066,12 @@
             toast.className = 'toast-msg';
             toast.innerText = msg;
             document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => toast.remove(), 400);
-            }, 2000);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 400); }, 2500);
         }
 
+        // ===== NAVEGACIÓN SUAVE =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 if (targetId === "#" || targetId === "") return;
                 const targetElem = document.querySelector(targetId);
